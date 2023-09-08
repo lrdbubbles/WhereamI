@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: system-ui;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: horizontal;
+}
+
+.countries {
+  opacity: 0;
+  transition: opacity 2s;
+  border-radius: 0.7rem;
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem;
+}
+
+.country__img {
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.country_data {
+  padding: 2.5rem 3.75rem 3rem 3.75rem;
+}
+
+.country_name {
+  font-size: 2.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.country_region {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.country_row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.country_row span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 2.4rem;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 12rem;
+  height: 12rem;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-whereami {
+  border: none;
+  border-radius: 12px;
+  padding: 1.3rem 12rem;
+  background-color: orange;
+  color: aliceblue;
+  font-weight: 500;
+  font-family: system-ui;
+  font-size: 2rem;
+}
+
+.btn-whereami:hover {
+  cursor: pointer;
+}
