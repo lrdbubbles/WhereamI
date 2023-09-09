@@ -17,7 +17,9 @@ function whereami() {
   getPosition()
     .then((position) => {
       console.log(position);
-      if (!position) throw new Error(`Problem getting location data!`);
+      if (!position) {
+        throw new Error(`Problem with getting location data!`);
+      }
       const { latitude, longitude } = position.coords;
 
       return fetch(
@@ -28,7 +30,10 @@ function whereami() {
         })
         .then((a) => getCountryData(a.features[0].properties.country));
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      container.append(err);
+      loader.style.display = "none";
+    });
 }
 
 async function getCountryData(pos) {
